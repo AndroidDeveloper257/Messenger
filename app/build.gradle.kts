@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -40,7 +41,7 @@ android {
     }
 }
 
-val commonAnnotationProcessors by configurations.creating
+val commonAnnotationProcessors: Configuration by configurations.creating
 configurations.named("kapt") { extendsFrom(commonAnnotationProcessors) }
 
 dependencies {
@@ -52,9 +53,11 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.hilt.android)
     commonAnnotationProcessors(libs.hilt.android.compiler)
+    implementation(libs.androidx.core.splashscreen)
 }

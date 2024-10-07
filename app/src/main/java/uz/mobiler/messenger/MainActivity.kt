@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             keepSplashOn = false
             Log.d("TAG", "onCreate: splash off")
-        }, 3000)
+        }, 2000)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
